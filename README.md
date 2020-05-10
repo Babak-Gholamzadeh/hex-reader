@@ -12,18 +12,18 @@ npm install -g hex-reader
 ## Usage
 You can use hex-reader in three possible ways.
 
-1. Read the content of a file by passing a valid the file path to it
+### 1. Read the content of a file by passing a valid the file path to it
 ```
 hex-reader /var/log.txt
 ```
 
-2. Read a simple string
+### 2. Read a simple string
 ```
 hex-reader "this is a simple string"
 ```
 *Note: If you pass an invalid file path or the application couldn't be able to read it, it just reads the file path as a simple string.*
 
-3. Read a content from pipe line
+### 3. Read a content from pipe line
 ```
 cat /var/log.txt | hex-reader
 ```
