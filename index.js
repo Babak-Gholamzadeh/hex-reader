@@ -1,77 +1,9 @@
 const fs = require('fs').promises;
-
+const prettyDisplay = require('./lib/pretty-display');
 (async file => {
   const content = await fs.readFile(file);
 
-  display(content);
+  prettyDisplay(content);
 
 })(process.argv[2]);
-
-function display(content) {
-  console.log(printColumnsName());
-  console.log(printRows(content));
-}
-
-function printColumnsName() {
-  let rowNames = `\t  |  `;
-  // For Hex columns
-  for (let i = 0; i < 16; i++) {
-    rowNames += i.toString(16).padStart(2, '0') + ' ';
-    if (i % 4 === 3) {
-      rowNames += ' ';
-    }
-  }
-  // For character columns
-  rowNames += '| ';
-  for (let i = 0; i < 16; i++) {
-    rowNames += i.toString(16);
-  }
-  // For printing a line
-  rowNames += `\n${`-`.repeat(10)}|${`-`.repeat(54)}|${`-`.repeat(17)} `;
-
-  return rowNames;
-}
-
-function printRows(content) {
-  const rows = [];
-  for (let i = 0; i < content.length; i += 16) {
-    let row = ` ${printRowNumber(i)} |  ${printHexBytes(content.slice(i, i + 16))}  | ${printCharBytes(content.slice(i, i + 16))}`;
-    rows.push(row);
-  }
-  return rows.join('\n');
-}
-
-function printRowNumber(index) {
-  return index.toString(16).padStart(8, '0');
-}
-
-function printHexBytes(content) {
-  const sixteenBytes = [];
-  for (let i = 0; i < 16; i += 4) {
-    const fourBytes = [];
-    for (let j = i; j < i + 4; j++) {
-      let oneByte = '';
-      if (j >= content.length) {
-        oneByte = '  ';
-      } else {
-        oneByte = content[j].toString(16).padStart(2, '0');
-      }
-      fourBytes.push(oneByte);
-    }
-    sixteenBytes.push(fourBytes.join(' '));
-  }
-  return sixteenBytes.join('  ');
-}
-
-function printCharBytes(content) {
-  let result = '';
-  content.forEach(function (byte) {
-    if ([10, 13].includes(byte)) {
-      result += '.';
-    } else {
-      result += String.fromCharCode(byte);
-    }
-  });
-  return result.padEnd(16, ' ');
-}
 
