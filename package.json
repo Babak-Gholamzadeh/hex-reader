@@ -1,0 +1,31 @@
+{
+  "name": "hex-reader",
+  "version": "1.0.0",
+  "description": "A cli application for reading a file content or a string value into Hex format",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Babak-Gholamzadeh/hex-reader.git"
+  },
+  "keywords": [
+    "cli",
+    "hex",
+    "content",
+    "format",
+    "byte",
+    "buffer",
+    "read"
+  ],
+  "author": "Babak Gholamzadeh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Babak-Gholamzadeh/hex-reader/issues"
+  },
+  "homepage": "https://github.com/Babak-Gholamzadeh/hex-reader#readme"
+}
