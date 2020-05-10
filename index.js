@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs').promises;
 const prettyDisplay = require('./lib/pretty-display');
 
