@@ -28,5 +28,8 @@
     "url": "https://github.com/Babak-Gholamzadeh/hex-reader/issues"
   },
   "homepage": "https://github.com/Babak-Gholamzadeh/hex-reader#readme",
-  "bin": "./index.js"
+  "bin": "./index.js",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  }
 }
