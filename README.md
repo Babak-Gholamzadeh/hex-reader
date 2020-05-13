@@ -30,4 +30,4 @@ cat /var/log.txt | hex-reader
 
 And a sample preview of its result:
 
-![hex-reader preview](https://raw.githubusercontent.com/Babak-Gholamzadeh/hex-reader/master/preview/preview.jpg)
+![hex-reader preview](https://raw.githubusercontent.com/Babak-Gholamzadeh/hex-reader/master/preview/preview.png)
