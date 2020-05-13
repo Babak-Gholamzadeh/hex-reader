@@ -11,7 +11,7 @@ const prettyDisplay = require('./lib/pretty-display');
       const content = await fs.readFile(file);
       prettyDisplay(content);
     } else {
-      throw new Error('The input is not a file');
+      throw new Error('The input is not a valid file path');
     }
 
   } catch(err) {
